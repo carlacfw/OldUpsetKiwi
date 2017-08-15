@@ -3,6 +3,8 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('complaint', (table) => {
     table.increments('id')
     table.string('complaint')
+    table.integer('user_id')
+    table.integer('company_id')
   })
 };
 
