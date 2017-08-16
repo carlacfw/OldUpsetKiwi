@@ -10,9 +10,25 @@ export function getCompanies() {
     })
   }
 }
+export function addCompanyRequest(company) {
+  return (dispatch) => {
+      request.post('/api/companies')
+      .send(company)
+      .end((err, res) => {
+        if (err) {console.log(err.message)}
+        dispatch(addCompanyAction(res.body))
+      })
+  }
+}
 function receiveCompanies(companies) {
   return {
     type: 'RECEIVE_COMPANIES',
     companies
+  }
+}
+export const addCompanyAction = (company) => {
+  return {
+    type: 'ADD_COMPANY',
+    company
   }
 }

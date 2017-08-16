@@ -3,6 +3,8 @@ export default function(state=[], action) {
     case 'RECEIVE_COMPANIES':
       return [...action.companies]
       break;
+      case 'ADD_COMPANY':
+      return [...state, action.company]
     default:
     return state
 
