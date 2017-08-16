@@ -32,9 +32,9 @@ class Form extends React.Component{
     return (
       <div>
         <form onSubmit={this.submitDetails.bind(this)}>
-          <input name='name' onChange={this.handleChange.bind(this)} value={this.state.newCompany.name}/>
-          <input name='email' onChange={this.handleChange.bind(this)} value={this.state.newCompany.email}/>
-          <input name='website' onChange={this.handleChange.bind(this)} value={this.state.newCompany.website}/>
+          <input name='name' placeholder="Company Name" onChange={this.handleChange.bind(this)} value={this.state.newCompany.name}/>
+          <input name='email' placeholder="Company Email" onChange={this.handleChange.bind(this)} value={this.state.newCompany.email}/>
+          <input name='website' placeholder="Company Website" onChange={this.handleChange.bind(this)} value={this.state.newCompany.website}/>
 
           <input type='submit' value='save'/>
         </form>

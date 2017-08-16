@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
       res.json(companies)
     })
 })
+
 router.post('/', (req, res) => {
   let db = req.app.get('db')
   companiesDb.saveCompany(db, req.body)
