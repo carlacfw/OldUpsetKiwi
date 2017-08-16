@@ -17,6 +17,7 @@ componentDidMount(){
   }
 }
 function mapStateToProps(state) {
+  console.log(state);
   return {companies: state.companies}
 }
 export default connect(mapStateToProps)(Companies)

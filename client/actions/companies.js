@@ -10,13 +10,14 @@ export function getCompanies() {
     })
   }
 }
-export function addCompanyRequest(company) {
+export function addCompanyRequest(company,callback) {
   return (dispatch) => {
       request.post('/api/companies')
       .send(company)
       .end((err, res) => {
         if (err) {console.log(err.message)}
-        dispatch(addCompanyAction(res.body))
+        //dispatch(addCompanyAction(res.body))
+        callback()
       })
   }
 }
