@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-//import {addCompanyRequest} from '../actions/companies'
+import {addComplaintRequest} from '../actions/companies'
+import {Link} from 'react-router-dom'
 
 
 class ComplaintForm extends React.Component{
@@ -13,16 +14,12 @@ class ComplaintForm extends React.Component{
       }
     }
   }
-//this is the complaint table form,
-//keep changing this file to be only the complaint form
-//create an action and a reducer file for complaint
-//add here the title input too
   submitDetails(e){
     let {newComplaint} = this.state
     e.preventDefault()
-    // this.props.dispatch(addCompanyRequest(newCompany,()=>{
-    //   this.props.history.push('/')
-    // }))
+    this.props.dispatch(addComplaintRequest(newComplaint,()=>{
+      this.props.history.push('/')
+    }))
   }
   handleChange(e) {
     let {newComplaint} = this.state
@@ -35,9 +32,11 @@ class ComplaintForm extends React.Component{
     return (
       <div>
         <form onSubmit={this.submitDetails.bind(this)}>
-          <input name='complaint' onChange={this.handleChange.bind(this)} value={this.state.newComplaint.complaint}/>
+          <input name='title' placeholder='Complaint Title' onChange={this.handleChange.bind(this)} value={this.state.newComplaint.title}/>
+          <input name='complaint' placeholder='Complaint' onChange={this.handleChange.bind(this)} value={this.state.newComplaint.complaint}/>
           <input type='submit' value='save'/>
         </form>
+          <Link to="/">Go Home</Link>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addCompanyRequest} from '../actions/companies'
+import {Link} from 'react-router-dom'
 
 class Form extends React.Component{
   constructor(props) {
@@ -38,6 +39,7 @@ class Form extends React.Component{
 
           <input type='submit' value='save'/>
         </form>
+        <Link to="/">Go Home</Link>
       </div>
     )
   }

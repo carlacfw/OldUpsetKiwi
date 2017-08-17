@@ -5,6 +5,9 @@ export default function(state=[], action) {
       break;
       case 'ADD_COMPANY':
       return [...state, action.company]
+      break;
+      case 'ADD_COMPLAINT':
+      return [...state, action.complaint]
     default:
     return state
 

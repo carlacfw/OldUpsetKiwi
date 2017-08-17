@@ -6,10 +6,15 @@ const getCompanies = (db) => {
 const saveCompany = (db, company) => {
   return db('companies')
   .insert(company)
-
 }
+const saveComplaint = (db, complaint) => {
+  return db('complaint')
+  .insert(complaint)
+}
+
 
 module.exports = {
   getCompanies,
-  saveCompany
+  saveCompany,
+  saveComplaint
 }
