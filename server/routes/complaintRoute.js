@@ -3,7 +3,6 @@ var router = express.Router()
 
 var companiesDb = require('../db/company')
 
-
 router.post('/', (req, res) => {
   let db = req.app.get('db')
   companiesDb.saveComplaint(db, req.body)

@@ -11,10 +11,9 @@ const App = () => (
     <div className='app-container'>
       <h1>Hello World</h1>
       <Route exact path="/" component={Home} />
-      <Route exact path="/companies" component={Companies} />
+      <Route path='/autocompleteform' component={AutoCompleteCompanyForm}/>
       <Route path='/companies/new' component={NewCompanyForm}/>
       <Route path='/complaints/new' component={ComplaintForm}/>
-      <Route path='/autocompleteform' component={AutoCompleteCompanyForm}/>
     </div>
   </Router>
 )

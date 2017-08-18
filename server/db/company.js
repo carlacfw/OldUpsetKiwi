@@ -12,9 +12,14 @@ const saveComplaint = (db, complaint) => {
   .insert(complaint)
 }
 
+const joinTables = (db) => {
+  return db('companies')
+  .join('complaint', 'companies.id', '=', 'complaint.company_id')
+}
 
 module.exports = {
   getCompanies,
   saveCompany,
-  saveComplaint
+  saveComplaint,
+  joinTables
 }

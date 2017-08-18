@@ -3,7 +3,8 @@ import request from 'superagent'
 
 export function getCompanies() {
   return (dispatch) => {
-    request.get('/api/companies')
+    request
+    .get('/api/companies')
     .end((err, res) => {
       if(err) {console.log(err);}
       dispatch(receiveCompanies(res.body));
@@ -12,7 +13,8 @@ export function getCompanies() {
 }
 export function addCompanyRequest(company,callback) {
   return (dispatch) => {
-      request.post('/api/companies')
+      request
+      .post('/api/companies')
       .send(company)
       .end((err, res) => {
         if (err) {console.log(err.message)}
@@ -23,7 +25,8 @@ export function addCompanyRequest(company,callback) {
 }
 export function addComplaintRequest(complaint,callback) {
   return (dispatch) => {
-      request.post('/api/complaint')
+      request
+      .post('/api/complaint')
       .send(complaint)
       .end((err, res) => {
         if (err) {console.log(err.message)}

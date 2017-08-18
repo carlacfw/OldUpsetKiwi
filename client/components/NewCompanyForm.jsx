@@ -24,7 +24,8 @@ class Form extends React.Component{
     let {newCompany} = this.state
     e.preventDefault()
     this.props.dispatch(addCompanyRequest(newCompany,()=>{
-      this.props.history.push('/')
+      console.log(this.props);
+      this.props.history.push('/complaints/new')
     }))
   }
   handleChange(e) {
@@ -41,13 +42,12 @@ class Form extends React.Component{
           <input name='name' placeholder="Company Name" onChange={this.handleChange.bind(this)} value={this.state.newCompany.name}/>
           <input name='email' placeholder="Company Email" onChange={this.handleChange.bind(this)} value={this.state.newCompany.email}/>
           <input name='website' placeholder="Company Website" onChange={this.handleChange.bind(this)} value={this.state.newCompany.website}/>
-
           <input type='submit' value='save'/>
         </form>
-        <Link to="/">Go Home</Link>
       </div>
     )
   }
 }
+
 
 export default connect()(Form)
