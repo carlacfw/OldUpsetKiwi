@@ -27,7 +27,6 @@ export function addComplaintRequest(complaint,callback) {
       .send(complaint)
       .end((err, res) => {
         if (err) {console.log(err.message)}
-        //dispatch(addCompanyAction(res.body))
         callback()
       })
   }

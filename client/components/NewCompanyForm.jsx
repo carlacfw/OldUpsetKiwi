@@ -8,13 +8,18 @@ class Form extends React.Component{
     super(props)
     this.state = {
       newCompany: {
-        name: '',
+        name: this.props.name || '',
         email: '',
         website: ''
       }
     }
   }
-
+  componentWillReceiveProps(nextProps) {
+    console.log("new props", nextProps)
+    let {newCompany} = this.state
+    newCompany.name = nextProps.name
+    this.setState({newCompany})
+  }
   submitDetails(e){
     let {newCompany} = this.state
     e.preventDefault()
