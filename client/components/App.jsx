@@ -9,7 +9,7 @@ import AutoCompleteCompanyForm from './AutoCompleteCompanyForm'
 const App = () => (
   <Router>
     <div className='app-container'>
-      <h1>Hello World</h1>
+      <h1>Upset Kiwi</h1>
       <Route exact path="/" component={Home} />
       <Route path='/autocompleteform' component={AutoCompleteCompanyForm}/>
       <Route path='/companies/new' component={NewCompanyForm}/>
