@@ -35,7 +35,7 @@ render() {
       <h1>Search for a company:</h1>
       <form onSubmit={this.redirectToComplaintForm.bind(this)}>
         <input type='text' className="form-control" name='search' value={search} onChange={this.updateSearch.bind(this)}/>
-        <input type='submit' value='Save'/>
+        <input type='submit' value='Save' onSubmit={this.redirectToComplaintForm.bind(this)}/>
       </form>
       {filteredCompanies.length != 0 || companies.find(company => company.name == search)
         ? filteredCompanies.map((company, i) => (
