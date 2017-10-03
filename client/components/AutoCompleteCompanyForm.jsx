@@ -23,6 +23,7 @@ class AutoCompleteCompanyForm extends React.Component {
   redirectToComplaintForm(e){
     e.preventDefault()
     console.log(this.state)
+    this.props.history.push('/complaints/new')
 
   }
 
@@ -35,7 +36,7 @@ render() {
       <h1>Search for a company:</h1>
       <form onSubmit={this.redirectToComplaintForm.bind(this)}>
         <input type='text' className="form-control" name='search' value={search} onChange={this.updateSearch.bind(this)}/>
-        <input type='submit' value='Save' onSubmit={this.redirectToComplaintForm.bind(this)}/>
+        <input type='submit' value='Save'/>
       </form>
       {filteredCompanies.length != 0 || companies.find(company => company.name == search)
         ? filteredCompanies.map((company, i) => (

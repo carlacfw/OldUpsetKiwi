@@ -11,8 +11,8 @@ const App = () => (
     <div className='app-container'>
       <h1>Upset Kiwi</h1>
       <Route exact path="/" component={Home} />
-      <Route path='/autocompleteform' component={AutoCompleteCompanyForm}/>
-      <Route path='/companies/new' component={NewCompanyForm}/>
+      <Route exact path='/autocompleteform' component={AutoCompleteCompanyForm}/>
+      <Route exact path='/companies/new' component={NewCompanyForm}/>
       <Route path='/complaints/new' component={ComplaintForm}/>
     </div>
   </Router>
