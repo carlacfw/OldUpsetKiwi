@@ -8,7 +8,6 @@ componentDidMount(){
   this.props.dispatch(getCompanies())
 }
   render() {
-
     return(
       <div>
         <Link to="/">Go Home</Link>

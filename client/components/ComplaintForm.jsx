@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {addComplaintRequest} from '../actions/companies'
 import {Link} from 'react-router-dom'
 
-
 class ComplaintForm extends React.Component{
   constructor(props) {
     super(props)
